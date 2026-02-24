@@ -2,15 +2,15 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let currentFilter = 'all'; // keeps track of which filter is active
+    let currentFilter = 'all'; 
     const blank = document.getElementById('blank');
 
-    // Helper to always get current cards
+    
     function getCards() {
         return document.querySelectorAll('.card');
     }
 
-    // Update scoreboard
+    
     function updateScoreboard() {
         const cards = getCards();
         let total = cards.length;
@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         document.querySelector('.totall').innerText = total;
-        document.querySelector('.inters').innerText = interviewCount;
+     document.querySelector('.inters').innerText = interviewCount;
         document.querySelector('.rejs').innerText = rejectedCount;
     }
 
-    // Filter cards and handle blank card
+    
     function filterCards(status) {
         const cards = getCards();
         let visibleCount = 0;
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Initialize buttons
+    
     const allBtn = document.querySelector('.btn-all');
     const interviewBtn = document.querySelector('.btn-inter');
     const rejectBtn = document.querySelector('.btn-rej');
@@ -57,12 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
     interviewBtn.addEventListener('click', () => { currentFilter = 'interview'; filterCards(currentFilter); });
     rejectBtn.addEventListener('click', () => { currentFilter = 'rejected'; filterCards(currentFilter); });
 
-    // Initialize each card
+    
     function initCards() {
         const cards = getCards();
         cards.forEach(card => {
             const inter = card.querySelector('.btn-success');
             const rej = card.querySelector('.btn-error');
+            
             const badge = card.querySelector('img');
             const dlt = card.querySelector('.btn-dlt');
 
