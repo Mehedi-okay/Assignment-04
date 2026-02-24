@@ -9,7 +9,7 @@
     <!-- tailwind -->
     <link href="/src/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>|
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="payoo-resources/assets/logo.png" type="image/x-icon">
 
@@ -37,22 +37,22 @@
 </head>
 
 <body class=" w-2/5 h-screen mx-auto">
-    <section class="pt-14 pb-8">
+    <section class=" scorboard pt-14 pb-8">
         <h1 class="text-3xl font-bold pb-5">Job Application Tracker</h1>
         <div class="Trackers grid grid-cols-3 gap-1">
             <div class="track p-5 bg-slate-600 border-red-800 text-white ">
                 <p class="text-left">Total</p>
-                <h3 class="text-left">8</h3>
+                <h3 class="totall text-left">8</h3>
             </div>
 
             <div class="track p-5 bg-slate-600 border-red-800 text-white ">
                 <p class="text-left">Interview</p>
-                <h3 class="text-left text-green-500">8</h3>
+                <h3 class="inters text-left text-green-500">0</h3>
             </div>
 
             <div class="track p-5 bg-slate-600 border-red-800 text-white ">
                 <p class="text-left ">Rejected</p>
-                <h3 class="text-left text-red-600">8</h3>
+                <h3 class="rejs text-left text-red-600">0</h3>
             </div>
         </div>
 
@@ -67,209 +67,255 @@
                 8 jobs
             </p>
         </div>
-        <div class="pt-7">
-            <button class="btn btn-neutral btn-outline px-8">All</button>
-            <button class="btn btn-neutral btn-outline">Interview</button>
-            <button class="btn btn-neutral btn-outline">Rejected</button>
+        <div class="pt-7 class='navigator">
+            <button class="btn btn-neutral btn-outline px-8 btn-all">All</button>
+            <button class="btn btn-neutral btn-outline btn-inter">Interview</button>
+            <button class="btn btn-neutral btn-outline btn-rej">Rejected</button>
 
         </div>
 
-        <!-- card-01  -->
+        <div id="card-container">
+            <!-- card-01  -->
 
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">Mobile First Corp</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">Mobile First Corp</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button  class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+            <!-- card-02  -->
 
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">WebFlow Agency</h3>
+                        <p class="text-sm text-slate-500">Web Designer & Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Los Angeles, CA •
+                    Part-time • $80,000 - $120,000</p>
 
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <!-- card-03  -->
+
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">DataViz Solutions</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <!-- card-04  -->
+
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">CloudFirst Inc</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <!-- card-05  -->
+
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">Innovation Labs</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <!-- card-06  -->
+
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">MegaCorp Solutions</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <!-- card-07  -->
+
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">StartupXYZ</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <!-- card-08  -->
+
+            <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow" data-status='all'>
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">TechCorp Industries</h3>
+                        <p class="text-sm text-slate-500">React Native Developer</p>
+                    </div>
+                    <div>
+                        <button class="btn rounded-full flex items-center justify-center shadow btn-dlt"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
+
+                <div class="pb-2 rounded">
+                    <img src="bekar.png" alt="">
+                </div>
+                
+                <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work
+                    on
+                    products used by millions of users worldwide.</p>
+
+                <div class="pb-7 pt-6">
+                    <button id="interview" class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Card-blank  -->
+
+            <div id="blank" class="bg-slate-300 text-center my-1 pt-28 pb-28 rounded border shadow hidden">
+                <div class="mx-auto flex justify-center pb-5"><img src="PH/jobs.png" alt=""></div>
+
+                <h1 class="text-xl font-bold pb-1">No jobs available</h1>
+                <p class="text-slate-500 text-sm">Check back soon for new job opportunities</p>
             </div>
         </div>
-        <!-- card-02  -->
 
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">WebFlow Agency</h3>
-                    <p class="text-sm text-slate-500">Web Designer & Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Los Angeles, CA •
-                Part-time • $80,000 - $120,000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-        <!-- card-03  -->
-
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">DataViz Solutions</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-        <!-- card-04  -->
-
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">CloudFirst Inc</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-        <!-- card-05  -->
-
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">Innovation Labs</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-        <!-- card-06  -->
-
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">MegaCorp Solutions</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-        <!-- card-07  -->
-
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">StartupXYZ</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-        <!-- card-08  -->
-
-        <div class=" card border bg-red-100 pt-7 px-3 mt-4 shadow">
-            <div class="flex justify-between">
-                <div>
-                    <h3 class="text-xl font-bold">TechCorp Industries</h3>
-                    <p class="text-sm text-slate-500">React Native Developer</p>
-                </div>
-                <div>
-                    <button class="btn rounded-full flex items-center justify-center shadow"><i
-                            class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-            <p class="text-slate-500 text-sm pt-5 pb-8">Remote • Full-time • $130,000 - $175,0000</p>
-
-            <p class="text-slate-500 text-sm pb">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
-
-            <div class="pb-7 pt-6">
-                <button class="btn btn-outline btn-success">interview</button>
-                <button class="btn btn-outline btn-error">Rejected</button>
-            </div>
-        </div>
-
-        
-        <!-- Card-09  -->
-        <div class="bg-slate-300 text-center my-1 pt-28 pb-28 rounded border shadow">
-            <div class="mx-auto flex justify-center pb-5"><img src="PH/jobs.png" alt=""></div>
-
-            <h1 class="text-xl font-bold pb-1">No jobs available</h1>
-            <p class="text-slate-500 text-sm">Check back soon for new job opportunities</p>
-        </div>
 
     </section>
+
+    <script src="deepstate.java/script.js"></script>
 </body>
 
 </html>
